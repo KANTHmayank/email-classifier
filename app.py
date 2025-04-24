@@ -1,26 +1,25 @@
-import os
 from fastapi import FastAPI
 from dotenv import load_dotenv
 from api import router as api_router
+import os
 
 load_dotenv()
 
-HOST = os.getenv("HOST", "127.0.0.1")
-PORT = int(os.getenv("PORT", 8000))
+HOST = os.getenv("HOST", "0.0.0.0")
+PORT = int(os.getenv("PORT", 7860))
 
+# ✅ Enable docs explicitly
 app = FastAPI(
     title="Email Classification API",
     description="Mask PII and classify emails using OpenAI few-shot.",
     version="1.0.0",
+    docs_url="/docs",         # Swagger UI
+    redoc_url="/redoc",       # ReDoc UI
 )
 
 app.include_router(api_router)
 
-@app.on_event("startup")
-async def _print_docs_url():
-    print(f"\n🚀 Swagger UI available at → http://{HOST}:{PORT}/docs")
-
-@app.get("/", tags=["Root"])
+@app.get("/")
 def read_root():
     return {
         "message": "Welcome to the Email Classification API!",
