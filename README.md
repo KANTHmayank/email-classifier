@@ -58,6 +58,11 @@ data/combined_emails_with_natural_pii.xlsx
 ▶️ Running the Server
 uvicorn app:app --reload
 
+Host binding: If you’re testing from another machine or inside a VM/container, bind to all interfaces:
+uvicorn app:app --reload --host 0.0.0.0
+and then visit http://<your-machine-IP>:8000/docs.
+
+
 You’ll see in your terminal:
 
 INFO: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
