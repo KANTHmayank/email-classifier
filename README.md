@@ -67,12 +67,13 @@ You’ll see in your terminal:
 
 INFO: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 
-🚀 Swagger UI available at → http://127.0.0.1:8000/docs
+🚀 Swagger UI available at
+→ https://kanthmayank-email-classifier.hf.space/docs
 
 
 📖 API Usage
 1. Swagger UI
-Visit http://127.0.0.1:8000/docs
+Visit https://kanthmayank-email-classifier.hf.space/docs
 
 Expand POST /classify
 
