@@ -11,7 +11,7 @@ PORT = int(os.getenv("PORT", 7860))
 # ✅ Enable docs explicitly
 app = FastAPI(
     title="Email Classification API",
-    description="Mask PII and classify emails using OpenAI few-shot.",
+    description="Mask PII using Regex and classify emails using Transformers distillbert model.",
     version="1.0.0",
     docs_url="/docs",         # Swagger UI
     redoc_url="/redoc",       # ReDoc UI
